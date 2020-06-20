@@ -8,12 +8,14 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="ɽ��̫ӵ�������Ǹ��ߴ���">
+<meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="ɽ��̫ӵ�������Ǹ��ߴ���">
 <meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
+<meta property="article:author" content="JiuYan">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -43,10 +45,10 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="./img/header.jpg" class="js-avatar">
+			<img src="/assets/img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">John Doe</a></h1>
+		  <h1 class="header-author"><a href="/">JiuYan</a></h1>
 		</hgroup>
 		
 
@@ -101,10 +103,10 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="./img/header.jpg" class="js-avatar">
+				<img src="/assets/img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">John Doe</h1>
+			  <h1 class="header-author js-header-author">JiuYan</h1>
 			</hgroup>
 			
 			
@@ -172,7 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="IDEA踩坑之springboot项目创建后文件夹为普通文件夹"><a href="#IDEA踩坑之springboot项目创建后文件夹为普通文件夹" class="headerlink" title="IDEA踩坑之springboot项目创建后文件夹为普通文件夹"></a>IDEA踩坑之springboot项目创建后文件夹为普通文件夹</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在IDEA中创建maven或者springboot工程时, 创建完毕.但是在src下的文件夹没有变成sources文件夹和Resources文件夹. 尝试通过Project Structure中手动设置但是yml文件没有变成springboot的配置文件的样子(小绿叶) 并且pom文件中引入依赖 不能自动导入依赖,并且报错 Event log :Auto build completed with errors problems中报错信息Information:java: Errors occurred while compiling module<br>jdk1.8 was used to compile java sources </p>
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在IDEA中创建maven或者springboot工程时, 创建完毕.但是在src下的文件夹没有变成sources文件夹和Resources文件夹. 尝试通过Project Structure中手动设置但是yml文件没有变成springboot的配置文件的样子(小绿叶) 并且pom文件中引入依赖 不能自动导入依赖,并且报错 Event log :Auto build completed with errors problems中报错信息Information:java: Errors occurred while compiling module<br>jdk1.8 was used to compile java sources </p>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><strong>settings–&gt;| Build, Execution, Deployment –&gt;build tools –&gt; maven –&gt;  Ignored Files 中将该模块下的pom.xml文件忽略了  取消勾选重新创建模块即可解决</strong><br><img src="http://qc7slebr8.bkt.clouddn.com/1.png" alt="jiuyan"><br>说明:我并没有在settings中设置,为什么会被忽略原因不详. </p>
 <hr>
 <p><em>希望这篇文章可以帮到您 转载请标命出处 <a href="http://www.jiuyanl.cn" target="_blank" rel="noopener">www.jiuyanl.cn</a></em></p>
@@ -228,7 +230,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 John Doe
+    		&copy; 2020 JiuYan
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
