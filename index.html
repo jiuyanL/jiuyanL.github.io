@@ -43,7 +43,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="./images/header.jpg" class="js-avatar">
+			<img src="./img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">John Doe</a></h1>
@@ -101,7 +101,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="./images/header.jpg" class="js-avatar">
+				<img src="./img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">John Doe</h1>
@@ -173,7 +173,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="IDEA踩坑之springboot项目创建后文件夹为普通文件夹"><a href="#IDEA踩坑之springboot项目创建后文件夹为普通文件夹" class="headerlink" title="IDEA踩坑之springboot项目创建后文件夹为普通文件夹"></a>IDEA踩坑之springboot项目创建后文件夹为普通文件夹</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在IDEA中创建maven或者springboot工程时, 创建完毕.但是在src下的文件夹没有变成sources文件夹和Resources文件夹. 尝试通过Project Structure中手动设置但是yml文件没有变成springboot的配置文件的样子(小绿叶) 并且pom文件中引入依赖 不能自动导入依赖,并且报错 Event log :Auto build completed with errors problems中报错信息Information:java: Errors occurred while compiling module<br>jdk1.8 was used to compile java sources </p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><strong>settings–&gt;| Build, Execution, Deployment –&gt;build tools –&gt; maven –&gt;  Ignored Files 中将该模块下的pom.xml文件忽略了  取消勾选重新创建模块即可解决</strong><br><img src="/2020/06/20/IDEA%E8%B8%A9%E5%9D%91%E4%B9%8Bspringboot%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6%E5%A4%B9/1.png" alt="jiuyan"><br>说明:我并没有在settings中设置,为什么会被忽略原因不详. </p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p><strong>settings–&gt;| Build, Execution, Deployment –&gt;build tools –&gt; maven –&gt;  Ignored Files 中将该模块下的pom.xml文件忽略了  取消勾选重新创建模块即可解决</strong><br><img src="http://qc7slebr8.bkt.clouddn.com/1.png" alt="jiuyan"><br>说明:我并没有在settings中设置,为什么会被忽略原因不详. </p>
 <hr>
 <p><em>希望这篇文章可以帮到您 转载请标命出处 <a href="http://www.jiuyanl.cn" target="_blank" rel="noopener">www.jiuyanl.cn</a></em></p>
 
