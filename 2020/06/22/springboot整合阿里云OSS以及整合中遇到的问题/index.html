@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 旧颜のblog</title>
+  <title>springboot整合阿里云OSS以及整合中遇到的问题 | 旧颜のblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="旧颜のblog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="阿里云OSS整合步骤1.登陆阿里云官网 点击控制台 找到oss对象存储服务,在oss内创建一个 Bucket 在右上角个人中心上找到accessKey管理,开启子账户,记录key、secret、EndPoint(后面要用)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="springboot整合阿里云OSS以及整合中遇到的问题">
+<meta property="og:url" content="http://yoursite.com/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="旧颜のblog">
+<meta property="og:description" content="阿里云OSS整合步骤1.登陆阿里云官网 点击控制台 找到oss对象存储服务,在oss内创建一个 Bucket 在右上角个人中心上找到accessKey管理,开启子账户,记录key、secret、EndPoint(后面要用)">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/1592789035.jpg">
+<meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/1592789035%281%29.jpg">
+<meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/1592789035.jpg">
+<meta property="article:published_time" content="2020-06-22T01:05:10.000Z">
+<meta property="article:modified_time" content="2020-06-22T01:52:42.375Z">
 <meta property="article:author" content="JiuYan">
+<meta property="article:tag" content="技术 踩坑">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qc7slebr8.bkt.clouddn.com/1592789035.jpg">
   
     <link rel="alternative" href="/atom.xml" title="旧颜のblog" type="application/atom+xml">
   
@@ -154,36 +163,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-springboot整合阿里云OSS以及整合中遇到的问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-06-22T01:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">springboot整合阿里云OSS以及整合中遇到的问题</a>
+    <h1 class="article-title" itemprop="name">
+      springboot整合阿里云OSS以及整合中遇到的问题
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-06-22T01:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="阿里云OSS整合步骤"><a href="#阿里云OSS整合步骤" class="headerlink" title="阿里云OSS整合步骤"></a>阿里云OSS整合步骤</h1><h3 id="1-登陆阿里云官网-点击控制台-找到oss对象存储服务-在oss内创建一个-Bucket-在右上角个人中心上找到accessKey管理-开启子账户-记录key、secret、EndPoint-后面要用"><a href="#1-登陆阿里云官网-点击控制台-找到oss对象存储服务-在oss内创建一个-Bucket-在右上角个人中心上找到accessKey管理-开启子账户-记录key、secret、EndPoint-后面要用" class="headerlink" title="1.登陆阿里云官网 点击控制台 找到oss对象存储服务,在oss内创建一个 Bucket 在右上角个人中心上找到accessKey管理,开启子账户,记录key、secret、EndPoint(后面要用)"></a>1.登陆阿里云官网 点击控制台 找到oss对象存储服务,在oss内创建一个 Bucket 在右上角个人中心上找到accessKey管理,开启子账户,记录key、secret、EndPoint(后面要用)</h3><a id="more"></a>
+<h3 id="2-打开springboot项目-在pom-xml中引入spring-cloud-starter-alicloud-oss一路来"><a href="#2-打开springboot项目-在pom-xml中引入spring-cloud-starter-alicloud-oss一路来" class="headerlink" title="2.打开springboot项目 在pom.xml中引入spring-cloud-starter-alicloud-oss一路来"></a>2.打开springboot项目 在pom.xml中引入spring-cloud-starter-alicloud-oss一路来</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba.cloud&lt;&#x2F;groupId&gt;</span><br><span class="line">     &lt;artifactId&gt;spring-cloud-starter-alicloud-oss&lt;&#x2F;artifactId&gt;</span><br><span class="line"> &lt;&#x2F;dependency&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="3-写application-yml文件"><a href="#3-写application-yml文件" class="headerlink" title="3.写application.yml文件"></a>3.写application.yml文件</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">alicloud:</span><br><span class="line">      access-key: xxxxxxxxx</span><br><span class="line">      secret-key: xxxxxxxxxxx</span><br><span class="line">      oss:</span><br><span class="line">        endpoint: xxxxxxxxxxxxx</span><br></pre></td></tr></table></figure>
+<p> <img src="http://qc7slebr8.bkt.clouddn.com/1592789035.jpg" alt="jiuyan"><br> <img src="http://qc7slebr8.bkt.clouddn.com/1592789035%281%29.jpg" alt="jiuyan"></p>
+<h3 id="4-做测试"><a href="#4-做测试" class="headerlink" title="4.做测试"></a>4.做测试</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootTest</span><br><span class="line">class Test&#123;</span><br><span class="line">    @Resource</span><br><span class="line">    OSSClient ossClient;</span><br><span class="line">     @Test</span><br><span class="line">    void  uploadTest() throws FileNotFoundException &#123;</span><br><span class="line">         &#x2F;&#x2F; 上传文件流。</span><br><span class="line">        InputStream inputStream &#x3D; new FileInputStream(&quot;C:header.jpg&quot;);</span><br><span class="line">        ossClient.putObject(&quot;buckename&quot;, &quot;head.jpg&quot;, inputStream);</span><br><span class="line"></span><br><span class="line">     &#x2F;&#x2F;关闭OSSClient。</span><br><span class="line">    ossClient.shutdown();</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;上传成功&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="在这个过程中可能会遇到的一些坑"><a href="#在这个过程中可能会遇到的一些坑" class="headerlink" title="在这个过程中可能会遇到的一些坑"></a>在这个过程中可能会遇到的一些坑</h2><ol>
+<li>yml配置文件错误  可能你连服务都启动不了 下面是主启动类debug的报错信息<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">java.io.FileNotFoundException: C:\Users\Àî˧ÐË\AppData\Local\Temp\capture2037.props (系统找不到指定的路径。)</span><br><span class="line">	at java.io.FileInputStream.open0(Native Method)</span><br><span class="line">	at java.io.FileInputStream.open(FileInputStream.java:195)</span><br><span class="line">	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:138)</span><br><span class="line">	at java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:93)</span><br></pre></td></tr></table></figure>
+出现这个报错,一定要去看看你的yml配置是否正确 是否按下图配置<br><img src="http://qc7slebr8.bkt.clouddn.com/1592789035.jpg" alt="jiuyan"></li>
+</ol>
+<hr>
+<p>  转载请标明 <a href="http://www.jiuyanl.cn" target="_blank" rel="noopener">www.jiuyanl.cn</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thanks Boss<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,95 +235,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/springboot%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AFmark(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-06-20T11:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/20/springboot%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AFmark(%E4%B8%80)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">springboot报错信息mark(一)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/springboot%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AFmark(%E4%B8%80)/">springboot报错信息mark(一)</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">springboot报错</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/IDEA%E8%B8%A9%E5%9D%91%E4%B9%8Bspringboot%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6%E5%A4%B9/" class="archive-article-date">
-  	<time datetime="2020-06-20T06:25:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/IDEA%E8%B8%A9%E5%9D%91%E4%B9%8Bspringboot%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6%E5%A4%B9/">IDEA踩坑之springboot项目创建后文件夹为普通文件夹</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IDEA 踩坑</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -306,8 +357,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
