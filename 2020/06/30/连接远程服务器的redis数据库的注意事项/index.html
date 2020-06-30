@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>旧颜のblog</title>
+  <title>连接远程服务器的redis数据库的注意事项 | 旧颜のblog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="旧颜のblog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="你不知道的redis的配置本地远程连接redis服务器1.阿里云安全组需要开启6379端口 2.服务器主机防火墙需要对允许其他主机对6379端口的访问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="连接远程服务器的redis数据库的注意事项">
+<meta property="og:url" content="http://yoursite.com/2020/06/30/%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84redis%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
 <meta property="og:site_name" content="旧颜のblog">
+<meta property="og:description" content="你不知道的redis的配置本地远程连接redis服务器1.阿里云安全组需要开启6379端口 2.服务器主机防火墙需要对允许其他主机对6379端口的访问">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/2020-6-30-1.png">
+<meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/2020-6-30-2.png">
+<meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/2020-6-30-3.png">
+<meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/2020-6-30-4.png">
+<meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/2020-6-30-5.png">
+<meta property="article:published_time" content="2020-06-30T01:49:30.000Z">
+<meta property="article:modified_time" content="2020-06-30T02:12:55.255Z">
 <meta property="article:author" content="JiuYan">
+<meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://qc7slebr8.bkt.clouddn.com/2020-6-30-1.png">
   
     <link rel="alternative" href="/atom.xml" title="旧颜のblog" type="application/atom+xml">
   
@@ -154,16 +165,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-连接远程服务器的redis数据库的注意事项" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-连接远程服务器的redis数据库的注意事项" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/30/%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84redis%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">连接远程服务器的redis数据库的注意事项</a>
+    <h1 class="article-title" itemprop="name">
+      连接远程服务器的redis数据库的注意事项
     </h1>
   
 
@@ -177,10 +186,46 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="你不知道的redis的配置"><a href="#你不知道的redis的配置" class="headerlink" title="你不知道的redis的配置"></a>你不知道的redis的配置</h1><h2 id="本地远程连接redis服务器"><a href="#本地远程连接redis服务器" class="headerlink" title="本地远程连接redis服务器"></a>本地远程连接redis服务器</h2><h2 id="1-阿里云安全组需要开启6379端口"><a href="#1-阿里云安全组需要开启6379端口" class="headerlink" title="1.阿里云安全组需要开启6379端口"></a>1.阿里云安全组需要开启6379端口</h2><p><img src="http://qc7slebr8.bkt.clouddn.com/2020-6-30-1.png" alt="jiuyan"></p>
-<h2 id="2-服务器主机防火墙需要对允许其他主机对6379端口的访问"><a href="#2-服务器主机防火墙需要对允许其他主机对6379端口的访问" class="headerlink" title="2.服务器主机防火墙需要对允许其他主机对6379端口的访问"></a>2.服务器主机防火墙需要对允许其他主机对6379端口的访问</h2>
-        
+<h2 id="2-服务器主机防火墙需要对允许其他主机对6379端口的访问"><a href="#2-服务器主机防火墙需要对允许其他主机对6379端口的访问" class="headerlink" title="2.服务器主机防火墙需要对允许其他主机对6379端口的访问"></a>2.服务器主机防火墙需要对允许其他主机对6379端口的访问</h2><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">systemctl start firewalld #开启防火墙</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone&#x3D;public --list-port #查看防火墙放行的端口</span><br><span class="line"></span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;6379&#x2F;tcp --permanent #永久添加6379端口</span><br></pre></td></tr></table></figure>
+<p><img src="http://qc7slebr8.bkt.clouddn.com/2020-6-30-2.png" alt="jiuyan"></p>
+<h2 id="3-修改redis-conf配置文件"><a href="#3-修改redis-conf配置文件" class="headerlink" title="3.修改redis.conf配置文件"></a>3.修改redis.conf配置文件</h2><h3 id="3-1将bind-127-0-0-1这行注释-或者修改为-bind-0-0-0-0-或者绑定指定ip"><a href="#3-1将bind-127-0-0-1这行注释-或者修改为-bind-0-0-0-0-或者绑定指定ip" class="headerlink" title="3.1将bind 127.0.0.1这行注释 或者修改为 bind 0.0.0.0 或者绑定指定ip"></a>3.1将bind 127.0.0.1这行注释 或者修改为 bind 0.0.0.0 或者绑定指定ip</h3><p><img src="http://qc7slebr8.bkt.clouddn.com/2020-6-30-3.png" alt="jiuyan"></p>
+<h3 id="3-2将protected-mode-属性修改为no-关闭保护模式"><a href="#3-2将protected-mode-属性修改为no-关闭保护模式" class="headerlink" title="3.2将protected-mode 属性修改为no 关闭保护模式"></a>3.2将protected-mode 属性修改为no 关闭保护模式</h3><p><img src="http://qc7slebr8.bkt.clouddn.com/2020-6-30-4.png" alt="jiuyan"></p>
+<h3 id="3-3修改daemonize属性为no-关闭守护进程"><a href="#3-3修改daemonize属性为no-关闭守护进程" class="headerlink" title="3.3修改daemonize属性为no 关闭守护进程"></a>3.3修改daemonize属性为no 关闭守护进程</h3><p><img src="http://qc7slebr8.bkt.clouddn.com/2020-6-30-5.png" alt="jiuyan"></p>
+<h2 id="4-重启防火墙"><a href="#4-重启防火墙" class="headerlink" title="4.重启防火墙"></a>4.重启防火墙</h2><figure class="highlight plain"><figcaption><span>restart firewalld```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">启动redis服务端可以远程访问的效果</span><br><span class="line">![jiuyan](http:&#x2F;&#x2F;qc7slebr8.bkt.clouddn.com&#x2F;2020-6-30-6.png)</span><br><span class="line">编译器中可能会报的异常</span><br></pre></td></tr></table></figure>
+<p>Exception in thread “main” redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host 39.96.33.203:6379<br>    at redis.clients.jedis.Connection.connect(Connection.java:204)<br>    at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:100)<br>    at redis.clients.jedis.Connection.sendCommand(Connection.java:125)<br>    at redis.clients.jedis.Connection.sendCommand(Connection.java:120)<br>    at redis.clients.jedis.BinaryClient.ping(BinaryClient.java:113)<br>    at redis.clients.jedis.BinaryJedis.ping(BinaryJedis.java:188)<br>    at cn.lsx.redis.RedisTest01.main(RedisTest01.java:8)<br>Caused by: java.net.SocketTimeoutException: connect timed out</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* * *</span><br></pre></td></tr></table></figure>
+<p>redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled, no bind address was specified, no authentication password is requested to clients. In this mode connections are only accepted from the loopback interface. If you want to connect from external computers to Redis you may adopt one of the following solutions:</p>
+<p>```<br>产生以上异常的原因</p>
+<ul>
+<li>检查ip地址和端口号是否正确</li>
+<li>服务器未开启redis的远程连接 未开启远程访问会又保护模式报错</li>
+<li>防火墙未放行6379端口<br>注：若以上不能访问可以添加这条命令在服务器出 /sbin/iptables -I INPUT -p tcp –dport 6379 -j ACCEPT</li>
+</ul>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Thanks Boss<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -200,16 +245,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/30/%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84redis%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/30/%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84redis%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">springboot整合阿里云OSS以及整合中遇到的问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -229,230 +333,14 @@
 
 
 
-
   
-    <article id="post-springboot整合阿里云OSS以及整合中遇到的问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">springboot整合阿里云OSS以及整合中遇到的问题</a>
-    </h1>
   
 
-        
-        <a href="/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-06-22T01:05:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="阿里云OSS整合步骤"><a href="#阿里云OSS整合步骤" class="headerlink" title="阿里云OSS整合步骤"></a>阿里云OSS整合步骤</h1><h3 id="1-登陆阿里云官网-点击控制台-找到oss对象存储服务-在oss内创建一个-Bucket-在右上角个人中心上找到accessKey管理-开启子账户-记录key、secret、EndPoint-后面要用"><a href="#1-登陆阿里云官网-点击控制台-找到oss对象存储服务-在oss内创建一个-Bucket-在右上角个人中心上找到accessKey管理-开启子账户-记录key、secret、EndPoint-后面要用" class="headerlink" title="1.登陆阿里云官网 点击控制台 找到oss对象存储服务,在oss内创建一个 Bucket 在右上角个人中心上找到accessKey管理,开启子账户,记录key、secret、EndPoint(后面要用)"></a>1.登陆阿里云官网 点击控制台 找到oss对象存储服务,在oss内创建一个 Bucket 在右上角个人中心上找到accessKey管理,开启子账户,记录key、secret、EndPoint(后面要用)</h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">技术 踩坑</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/22/springboot%E6%95%B4%E5%90%88%E9%98%BF%E9%87%8C%E4%BA%91OSS%E4%BB%A5%E5%8F%8A%E6%95%B4%E5%90%88%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-springboot报错信息mark(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/20/springboot%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AFmark(%E4%B8%80)/">springboot报错信息mark(一)</a>
-    </h1>
   
 
-        
-        <a href="/2020/06/20/springboot%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AFmark(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2020-06-20T11:05:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="java-lang-IllegalStateException-Failed-to-load-property-source-from-location-‘classpath-application-yml’"><a href="#java-lang-IllegalStateException-Failed-to-load-property-source-from-location-‘classpath-application-yml’" class="headerlink" title="java.lang.IllegalStateException: Failed to load property source from location ‘classpath:/application.yml’"></a>java.lang.IllegalStateException: Failed to load property source from location ‘classpath:/application.yml’</h1><p>该异常信息通常是以下两点情况造成的。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">springboot报错</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/20/springboot%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AFmark(%E4%B8%80)/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-IDEA踩坑之springboot项目创建后文件夹为普通文件夹" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/20/IDEA%E8%B8%A9%E5%9D%91%E4%B9%8Bspringboot%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6%E5%A4%B9/">IDEA踩坑之springboot项目创建后文件夹为普通文件夹</a>
-    </h1>
   
 
-        
-        <a href="/2020/06/20/IDEA%E8%B8%A9%E5%9D%91%E4%B9%8Bspringboot%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6%E5%A4%B9/" class="archive-article-date">
-  	<time datetime="2020-06-20T06:25:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在IDEA中创建maven或者springboot工程时, 创建完毕.但是在src下的文件夹没有变成sources文件夹和Resources文件夹. 尝试通过Project Structure中手动设置但是yml文件没有变成springboot的配置文件的样子(小绿叶) 并且pom文件中引入依赖 不能自动导入依赖,并且报错 Event log :Auto build completed with errors problems中报错信息Information:java: Errors occurred while compiling module<br>jdk1.8 was used to compile java sources </p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">IDEA 踩坑</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/20/IDEA%E8%B8%A9%E5%9D%91%E4%B9%8Bspringboot%E9%A1%B9%E7%9B%AE%E5%88%9B%E5%BB%BA%E5%90%8E%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%BA%E6%99%AE%E9%80%9A%E6%96%87%E4%BB%B6%E5%A4%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -475,8 +363,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
