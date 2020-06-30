@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/2020-6-30-4.png">
 <meta property="og:image" content="http://qc7slebr8.bkt.clouddn.com/2020-6-30-5.png">
 <meta property="article:published_time" content="2020-06-30T01:49:30.000Z">
-<meta property="article:modified_time" content="2020-06-30T02:17:33.763Z">
+<meta property="article:modified_time" content="2020-06-30T02:21:17.725Z">
 <meta property="article:author" content="JiuYan">
 <meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
@@ -193,9 +193,8 @@
 <h3 id="3-2将protected-mode-属性修改为no-关闭保护模式"><a href="#3-2将protected-mode-属性修改为no-关闭保护模式" class="headerlink" title="3.2将protected-mode 属性修改为no 关闭保护模式"></a>3.2将protected-mode 属性修改为no 关闭保护模式</h3><p><img src="http://qc7slebr8.bkt.clouddn.com/2020-6-30-4.png" alt="jiuyan"></p>
 <h3 id="3-3修改daemonize属性为no-关闭守护进程"><a href="#3-3修改daemonize属性为no-关闭守护进程" class="headerlink" title="3.3修改daemonize属性为no 关闭守护进程"></a>3.3修改daemonize属性为no 关闭守护进程</h3><p><img src="http://qc7slebr8.bkt.clouddn.com/2020-6-30-5.png" alt="jiuyan"></p>
 <h2 id="4-重启防火墙"><a href="#4-重启防火墙" class="headerlink" title="4.重启防火墙"></a>4.重启防火墙</h2><figure class="highlight plain"><figcaption><span>restart firewalld```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">启动redis服务端可以远程访问的效果</span><br><span class="line">![jiuyan](http:&#x2F;&#x2F;qc7slebr8.bkt.clouddn.com&#x2F;2020-6-30-6.png)</span><br><span class="line">编译器中可能会报的异常</span><br></pre></td></tr></table></figure>
-<p>Exception in thread “main” redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host 39.96.33.203:6379<br>    at redis.clients.jedis.Connection.connect(Connection.java:204)<br>    at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:100)<br>    at redis.clients.jedis.Connection.sendCommand(Connection.java:125)<br>    at redis.clients.jedis.Connection.sendCommand(Connection.java:120)<br>    at redis.clients.jedis.BinaryClient.ping(BinaryClient.java:113)<br>    at redis.clients.jedis.BinaryJedis.ping(BinaryJedis.java:188)<br>    at cn.lsx.redis.RedisTest01.main(RedisTest01.java:8)<br>Caused by: java.net.SocketTimeoutException: connect timed out</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled, no bind address was specified, no authentication password is requested to clients. In this mode connections are only accepted from the loopback interface. If you want to connect from external computers to Redis you may adopt one of the following solutions:</p>
+<h2 id="远程连接失败异常"><a href="#远程连接失败异常" class="headerlink" title="远程连接失败异常"></a>远程连接失败异常</h2><p>Exception in thread “main” redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host 39.96.33.203:6379<br>    at redis.clients.jedis.Connection.connect(Connection.java:204)<br>    at redis.clients.jedis.BinaryClient.connect(BinaryClient.java:100)<br>    at redis.clients.jedis.Connection.sendCommand(Connection.java:125)<br>    at redis.clients.jedis.Connection.sendCommand(Connection.java:120)<br>    at redis.clients.jedis.BinaryClient.ping(BinaryClient.java:113)<br>    at redis.clients.jedis.BinaryJedis.ping(BinaryJedis.java:188)<br>    at cn.lsx.redis.RedisTest01.main(RedisTest01.java:8)<br>Caused by: java.net.SocketTimeoutException: connect timed out</p>
+<h2 id="服务器允许远程连接-redis又保护模式"><a href="#服务器允许远程连接-redis又保护模式" class="headerlink" title="服务器允许远程连接 redis又保护模式"></a>服务器允许远程连接 redis又保护模式</h2><p>redis.clients.jedis.exceptions.JedisDataException: DENIED Redis is running in protected mode because protected mode is enabled, no bind address was specified, no authentication password is requested to clients. In this mode connections are only accepted from the loopback interface. If you want to connect from external computers to Redis you may adopt one of the following solutions:</p>
 <p>```<br>产生以上异常的原因</p>
 <ul>
 <li>检查ip地址和端口号是否正确</li>
@@ -434,15 +433,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">IDEA 踩坑</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">springboot报错</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">技术 踩坑</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">IDEA 踩坑</a>
               </li>
              
               <li class="article-tag-list-item">
